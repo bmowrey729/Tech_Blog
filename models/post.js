@@ -19,17 +19,19 @@ Post.init(
     body: {
       type: DataTypes.STRING,
       allowNull: false,
-    }, 
+    },
     userId: {
-      type:DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       references: {
         model: 'user',
         key: 'id',
-      }
-    }   
+      },
+    },
   },
   {
-    sequelize,    
+    sequelize,
+    modelName: 'post',
+    freezeTableName: true,
   }
 );
 

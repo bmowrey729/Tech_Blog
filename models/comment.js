@@ -11,28 +11,30 @@ Comment.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
-    },    
+    },
     body: {
       type: DataTypes.STRING,
       allowNull: false,
-    }, 
+    },
     userId: {
-      type:DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       references: {
         model: 'user',
         key: 'id',
       },
-    }, 
+    },
     postId: {
-      type:DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       references: {
         model: 'post',
         key: 'id',
-      }
-    }        
+      },
+    },
   },
   {
-    sequelize,    
+    sequelize,
+    modelName: 'comment',
+    freezeTableName: true,
   }
 );
 
